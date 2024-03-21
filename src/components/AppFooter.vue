@@ -33,9 +33,10 @@ export default {
 
 <style lang="scss">
 /* CSS HERE */
+@use '../components/variables/variables.scss' as *;
 .footer-container {
     padding: 10px;
-    background-color: gray;
+    background-color: $footer-color;
     color: white;
 }
 

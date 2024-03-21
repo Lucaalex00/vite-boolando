@@ -34,7 +34,7 @@ export default {
 <style lang="scss">
 /* CSS HERE */
 
-@use './variables/variables.scss' as *;
+@use '../components/variables/variables.scss' as *;
 
 .container {
     max-width: 80%;
@@ -43,8 +43,8 @@ export default {
 
 .header-container {
     padding: 10px;
-    background-color: var($header-color);
-    color: white;
+    background-color: $header-color;
+    color: $light-color;
     width: 100%;
     position: fixed;
     z-index: 1;
