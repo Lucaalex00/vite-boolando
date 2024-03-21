@@ -34,6 +34,7 @@ export default {
 <style lang="scss">
 /* CSS HERE */
 @use '../components/variables/variables.scss' as *;
+
 .footer-container {
     padding: 10px;
     background-color: $footer-color;
@@ -56,7 +57,7 @@ export default {
 
 .fa:hover {
     font-size: 1.5rem;
-    background-color: var(--light-color);
+    background-color: $light-color;
 }
 
 </style>
