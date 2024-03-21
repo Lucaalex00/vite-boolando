@@ -209,8 +209,8 @@ export default {
     <!-- /#site-main -->
 
 </template>
-
 <style lang="scss">
+@use '../components/variables/variables.scss' as *;
 .absolute {
     position: absolute;
 }
@@ -302,23 +302,23 @@ export default {
 .hearts-container {
     top: 10px;
     right: 0px;
-    background-color: var(--light-color);
+    background-color: $light-color;
     padding: 5px 10px;
 }
 
 .percent-sales-container {
     bottom: 30px;
     padding: 2px 8px;
-    background-color: red;
-    color: white;
+    background-color: $discount-color;
+    color: $light-color;
 }
 
 .article-description-container {
     bottom: 30px;
     left: 50px;
     padding: 2px 8px;
-    background-color: green;
-    color: white;
+    background-color: $tag-color;
+    color: $light-color;
 }
 
 .article-name {
@@ -327,7 +327,7 @@ export default {
 }
 
 .sale-price {
-    color: var(--price-sale-color);
+    color: black;
     font-weight: bold;
     margin-right: 2px;
 }
