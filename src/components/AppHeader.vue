@@ -31,8 +31,11 @@ export default {
 
 </template>
 
-<style>
+<style lang="scss">
 /* CSS HERE */
+
+@use './variables/variables.scss' as *;
+
 .container {
     max-width: 80%;
     margin: auto;
@@ -40,7 +43,7 @@ export default {
 
 .header-container {
     padding: 10px;
-    background-color: var(--background-header-color);
+    background-color: var($header-color);
     color: white;
     width: 100%;
     position: fixed;
