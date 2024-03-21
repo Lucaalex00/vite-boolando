@@ -33,8 +33,7 @@ export default {
 
 <style lang="scss">
 /* CSS HERE */
-
-@use '../components/variables/variables.scss' as *;
+@use '../variables/variables.scss' as *;
 
 .container {
     max-width: 80%;

@@ -19,10 +19,10 @@ export default {
                 <div>
                     <h3>Trovaci anche su:</h3>
                     <!-- LOGHI-->
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-youtube"></a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss">
 /* CSS HERE */
-@use '../components/variables/variables.scss' as *;
+@use '../variables/variables.scss' as *;
 
 .footer-container {
     padding: 10px;
@@ -50,12 +50,13 @@ export default {
     padding-right: 20px;
 }
 
-.fa {
+.fab {
     color: white;
     text-decoration: none;
+    padding: 0 0.5rem;
 }
 
-.fa:hover {
+.fab:hover {
     font-size: 1.5rem;
     background-color: $light-color;
 }

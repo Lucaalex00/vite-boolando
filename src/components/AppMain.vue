@@ -210,7 +210,7 @@ export default {
 
 </template>
 <style lang="scss">
-@use '../components/variables/variables.scss' as *;
+@use '../variables/variables.scss' as *;
 .absolute {
     position: absolute;
 }
