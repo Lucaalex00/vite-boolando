@@ -1,7 +1,7 @@
 export const products = [
   {
-    image: "./assets/img/1.webp",
-    hiddenImage: "./ ,",
+    image: "/1.webp",
+    hiddenImage: "/1b.webp ",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
@@ -11,8 +11,8 @@ export const products = [
     finalPrice: "14.99€",
   },
   {
-    image: "./assets/img/2.webp",
-    hiddenImage: "./ ,",
+    image: "/2.webp",
+    hiddenImage: "/2b.webp ",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
@@ -22,8 +22,8 @@ export const products = [
     finalPrice: "14.99€",
   },
   {
-    image: "./assets/img/3.webp",
-    hiddenImage: "./ ,",
+    image: "/3.webp",
+    hiddenImage: "/3b.webp",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
@@ -33,8 +33,8 @@ export const products = [
     finalPrice: "14.99€",
   },
   {
-    image: "./assets/img/4.webp",
-    hiddenImage: "./ ,",
+    image: "/4.webp",
+    hiddenImage: "/4b.webp",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
@@ -44,8 +44,8 @@ export const products = [
     finalPrice: "14.99€",
   },
   {
-    image: "./assets/img/5.webp",
-    hiddenImage: "./ ,",
+    image: "/5.webp",
+    hiddenImage: "/5b.webp ",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
@@ -55,8 +55,8 @@ export const products = [
     finalPrice: "14.99€",
   },
   {
-    image: "./assets/img/6.webp",
-    hiddenImage: "./ ,",
+    image: "/6.webp",
+    hiddenImage: "/6b.webp",
     heartIconFavorites: "&hearts;",
     percentSale: "-50%",
     typeDescription: "Sostenibilità",
