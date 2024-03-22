@@ -277,6 +277,7 @@ export default {
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .flex-top-bottom {
@@ -304,6 +305,10 @@ export default {
     right: 0px;
     background-color: $light-color;
     padding: 5px 10px;
+    & :hover{
+        color:red;
+        cursor: pointer;
+    }
 }
 
 .percent-sales-container {
