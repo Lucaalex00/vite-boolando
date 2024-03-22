@@ -124,30 +124,38 @@ export default {
     background-color: $light-color;
     padding: 5px 10px;
 
-    & :hover {
-        color: red;
-        cursor: pointer;
-    }
+}
+.heart-red{
+    color: red;
 }
 
 .percent-sales-container {
     bottom: 30px;
-    padding: 2px 8px;
-    background-color: $discount-color;
     color: $light-color;
+}
+.percent-sales-container-bg-color{
+    background-color: $discount-color;
+    padding: 2px 8px;
 }
 
 .article-description-container {
     bottom: 30px;
     left: 50px;
+    color: $light-color;
+}
+.article-description-container-bg-color{
     padding: 2px 8px;
     background-color: $tag-color;
-    color: $light-color;
 }
 
 .article-name {
     font-weight: bold;
+    font-size: 1.2rem;
 
+}
+.prices{
+    display: flex;
+    gap: 0.5rem;
 }
 
 .sale-price {
@@ -158,6 +166,11 @@ export default {
 
 .original-price {
     text-decoration: line-through;
+}
+
+.badge-container{
+    display: flex;
+    bottom: 30px;;
 }
 
 </style>

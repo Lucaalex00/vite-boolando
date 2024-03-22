@@ -4,44 +4,63 @@ export default {
     name: 'ProductCard',
     props: {
         product:Object,
+    },
+    discountedPrice:0,
+    methods: {
+        calcDiscount(price, discount) {
+            
+            return Number(this.discountedPrice = (parseInt(price) * parseInt(discount) / 100))
+        }, 
+        
+        }
     }
-}
 </script>
 
-<template> 
-                <div class="flex-top-bottom">
-                    <div class="top-container">
+<template>
+    <div class="flex-top-bottom">
+        <div class="top-container">
 
-                        <div class="img first"> <!-- section-->
-                            <img :src="'../src/assets/img'+ product.image">
-                            <img class="hidden" :src="'../src/assets/img'+ product.hiddenImage">
-                            <div class="hearts-container absolute">
-                                <span v-html="product.heartIconFavorites"></span>
-                            </div>
-                            <div class="percent-sales-container absolute">
-                                <div>{{product.percentSale}}</div>
-
-                            </div>
-                            <div class="article-description-container absolute">
-                                <div>{{ product.typeDescription }}</div>
-                            </div>
+            <div class="img first"> <!-- section-->
+                <img :src="'../src/assets/img/'+ product.frontImage">
+                <img class="hidden" :src="'../src/assets/img/'+ product.backImage">
+                <div class="hearts-container absolute" v-if="product.isInFavorites == true">
+                    <span class="heart-red">&hearts;</span>
+                </div>
+                <div v-else class="hearts-container absolute">
+                    <span>&hearts;</span>
+                </div>
+                <div class="badge-container absolute">
+                    <div v-for="badge in product.badges" class="percent-sales-container">
+                        <div v-if="badge.type=='discount'" class="percent-sales-container-bg-color">{{badge.value}}
                         </div>
                     </div>
-
-
-                    <div class="bottom-container debug ">
-                        <div class="brand">
-                            Levi's
-                        </div>
-                        <div class="article-name">
-                            RELAXED FIT TEE UNISEX
-                        </div>
-                        <div class="prices">
-                            <span class="sale-price">14.99€</span>
-                            <span class="original-price">29.99€</span>
-                        </div>
+                    <div v-for="badge in product.badges" class="article-description-container">
+                        <div v-if="badge.type=='tag'" class="article-description-container-bg-color">
+                            {{ badge.value }}</div>
+                        <div v-else></div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="bottom-container debug ">
+            <div class="brand">
+                {{ product.brand }}
+            </div>
+            <div class="article-name">
+                {{product.name}}
+            </div>
+            <div class="prices">
+                <span class=" sale-price">{{product.price }}€</span>
+                <div v-for="badge in product.badges">
+                    <span class="original-price" v-if="badge.type=='discount'">
+                        {{calcDiscount(product.price, badge.value
+                        ) }}€</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 
