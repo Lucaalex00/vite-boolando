@@ -1,5 +1,6 @@
 <script>
 /* JS HERE */
+import AppCard from "../components/AppCard.vue";
 export default {
     name: 'AppMain'
 }
