@@ -3,17 +3,19 @@
 export default {
     name: 'ProductCard',
     props: {
-        product:Object,
+        product: Object,
     },
-    discountedPrice:0,
+    discountedPrice: 0,
     methods: {
         calcDiscount(price, discount) {
-            
-            return Number(this.discountedPrice = (parseInt(price) * parseInt(discount) / 100))
-        }, 
-        
-        }
+            // Converte i valori in numeri e calcola lo sconto
+            this.discountedPrice = price * (1 - parseInt(discount) / 100);
+
+            // Restituisci il prezzo scontato
+            return this.discountedPrice.toFixed(2); // Arrotonda il prezzo a due decimali
+        },
     }
+}
 </script>
 
 <template>
@@ -52,12 +54,15 @@ export default {
                 {{product.name}}
             </div>
             <div class="prices">
-                <span class=" sale-price">{{product.price }}€</span>
+                <span class=" sale-price ">
+                    {{ product.price }}€</span>
                 <div v-for="badge in product.badges">
-                    <span class="original-price" v-if="badge.type=='discount'">
-                        {{calcDiscount(product.price, badge.value
-                        ) }}€</span>
+
+                    <span v-if="badge.type == 'discount'" class=" original-price">{{
+                        calcDiscount(product.price,
+                        badge.value) }}€</span>
                 </div>
+
             </div>
         </div>
     </div>
