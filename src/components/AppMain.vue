@@ -1,7 +1,7 @@
 <script>
 /* JS HERE */
 import ProductCard from "./ProductCard.vue";
-import { products } from '../data.js'
+import {state} from '../state.js'
 export default {
     name: 'AppMain',
     components: {
@@ -9,8 +9,13 @@ export default {
     },
     data() {
         return {
-            products
+            state // (state:state / KEY: VALUE)
+            
         }
+    },
+    mounted() {
+        this.state.getProducts(this.state.products_url)
+        //INVOKE FUNCTION for use "url" and select products in data of state
     }
 }
 </script>
@@ -19,7 +24,7 @@ export default {
     <!-- HTML HERE -->
     <main id="site-main">
         <div class="main-container container debug">
-            <ProductCard :product="product" v-for="product in products" />
+            <ProductCard :product="product" v-for="product in state.products" />
 </div>
     </main>
     <!-- /#site-main -->

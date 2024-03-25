@@ -18,12 +18,12 @@ export default {
 
 <template>
   <!-- USE COMPONENTS -->
-
   <AppHeader />
+
   <AppMain />
+  
   <AppFooter />
 </template>
 
 <style>
-
 </style>
