@@ -48,57 +48,13 @@ export default {
 }
 
 .first:hover .hidden {
-    display: block;
-}
-
-.second:hover img {
-    display: none;
-    cursor: pointer;
-}
-
-.second:hover .hidden {
-    display: block;
-}
-
-.third:hover img {
-    display: none;
-    cursor: pointer;
-}
-
-.third:hover .hidden {
-    display: block;
-}
-
-.fourth:hover img {
-    display: none;
-    cursor: pointer;
-}
-
-.fourth:hover .hidden {
-    display: block;
-}
-
-.fifth:hover img {
-    display: none;
-    cursor: pointer;
-}
-
-.fifth:hover .hidden {
-    display: block;
-}
-
-.six:hover img {
-    display: none;
-    cursor: pointer;
-}
-
-.six:hover .hidden {
-    display: block;
+    display: inline-block;
 }
 
 .main-container {
     padding: 50px;
     display: flex;
+    gap:1rem;
     flex-wrap: wrap;
     justify-content: space-between;
 }

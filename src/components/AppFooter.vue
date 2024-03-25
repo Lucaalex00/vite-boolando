@@ -1,7 +1,7 @@
 <script>
 /* JS HERE */
 export default {
-    name: 'AppFooter'
+    name: 'AppFooter',
 }
 </script>
 
@@ -12,9 +12,9 @@ export default {
             <div class="container">
                 <div class="info-footer">
                     <h3>Boolando S.r.l</h3>
-                    <span>informazioni legali</span>
-                    <span>Informativa sulla privacy</span>
-                    <span>Diritto di accesso</span>
+                    <a href="#">informazioni legali</a>
+                    <a href="#">Informativa sulla privacy</a>
+                    <a href="#">Diritto di accesso</a>
                 </div>
                 <div>
                     <h3>Trovaci anche su:</h3>
@@ -38,7 +38,7 @@ export default {
 .footer-container {
     padding: 10px;
     background-color: $footer-color;
-    color: white;
+    color: $light-color;
 }
 
 .footer-container>div {
@@ -46,18 +46,21 @@ export default {
     justify-content: space-between;
 }
 
-.info-footer>span {
+.info-footer>a {
     padding-right: 20px;
+    text-decoration: none;
+    color:$light-color;
 }
 
 .fab {
-    color: white;
+    color: $light-color;
     text-decoration: none;
     padding: 0 0.5rem;
 }
 
 .fab:hover {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: $darkest-color;
     background-color: $light-color;
 }
 
