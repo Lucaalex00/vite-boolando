@@ -1,17 +1,25 @@
 <script>
 /* JS HERE */
 import ProductCard from "./ProductCard.vue";
+import ModalComponent from "./Modal.vue";
+
 import {state} from '../state.js'
 export default {
     name: 'AppMain',
     components: {
         ProductCard,
+        ModalComponent,
     },
     data() {
         return {
-            state // (state:state / KEY: VALUE)
-            
+            state, // (state:state / KEY: VALUE)
+            isShowModal: false,            
         }
+    },
+    methods: {
+        showModal() {
+            this.isShowModal = true;
+        },   
     },
     mounted() {
         this.state.getProducts(this.state.products_url)
@@ -24,7 +32,8 @@ export default {
     <!-- HTML HERE -->
     <main id="site-main">
         <div class="main-container container debug">
-            <ProductCard :product="product" v-for="product in state.products" />
+            <ProductCard :product="product" v-for="product in state.products" @show-modal="showModal()"/>
+            <ModalComponent v-if="this.isShowModal"/>
         </div>
     </main>
     <!-- /#site-main -->
@@ -64,8 +73,10 @@ export default {
 .flex-top-bottom {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 5px;
     width: calc(100%/3 - 20px);
+    min-width: 150px;
 
 }
 
@@ -73,6 +84,7 @@ export default {
     width: 100%;
     box-shadow: 10px 8px rgba(0, 0, 0, 0.192);
     border-radius: 20px;
+    border: 1px solid lightgray
 }
 
 .top-container {
@@ -92,9 +104,6 @@ export default {
     border-radius: 5px;
     border-top-right-radius: 50%;
 
-}
-.heart-red{
-    color: red;
 }
 
 .percent-sales-container {
