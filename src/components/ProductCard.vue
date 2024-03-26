@@ -5,6 +5,7 @@ export default {
     props: {
         product: Object,
     },
+    selectedEl:false,
     discountedPrice: 0,
     methods: {
         calcDiscount(price, discount) {
@@ -14,6 +15,9 @@ export default {
             // Restituisci il prezzo scontato
             return this.discountedPrice.toFixed(2); // Arrotonda il prezzo a due decimali
         },
+        AddFavorites() {
+            this.selectedEl = !this.selectedEl;
+        }
     }
 }
 </script>
@@ -25,11 +29,8 @@ export default {
             <div class="img first"> <!-- section-->
                 <img :src="'../src/assets/img/'+ product.frontImage">
                 <img class="hidden" :src="'../src/assets/img/'+ product.backImage">
-                <div class="hearts-container absolute" v-if="product.isInFavorites == true">
-                    <span class="heart-red">&hearts;</span>
-                </div>
-                <div v-else class="hearts-container absolute">
-                    <span>&hearts;</span>
+                <div class="hearts-container absolute">
+                    <span :style="{ color: this.selectedEl ? 'red' : 'black' }"@click="AddFavorites()">&hearts;</span>
                 </div>
                 <div class="badge-container absolute">
                     <div v-for="badge in product.badges" class="percent-sales-container">

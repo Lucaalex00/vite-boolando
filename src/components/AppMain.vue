@@ -25,7 +25,7 @@ export default {
     <main id="site-main">
         <div class="main-container container debug">
             <ProductCard :product="product" v-for="product in state.products" />
-</div>
+        </div>
     </main>
     <!-- /#site-main -->
 </template>
@@ -45,10 +45,12 @@ export default {
 .first:hover img {
     display: none;
     cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 10px 8px rgba(0, 0, 0, 0.466);
 }
 
 .first:hover .hidden {
-    display: inline-block;
+    display: inline;
 }
 
 .main-container {
@@ -69,6 +71,8 @@ export default {
 
 .img img {
     width: 100%;
+    box-shadow: 10px 8px rgba(0, 0, 0, 0.192);
+    border-radius: 20px;
 }
 
 .top-container {
@@ -76,14 +80,17 @@ export default {
     flex-wrap: wrap;
     position: relative;
     width: 100%;
+    
 
 }
 
 .hearts-container {
     top: 10px;
-    right: 0px;
+    right: 5px;
     background-color: $light-color;
     padding: 5px 10px;
+    border-radius: 5px;
+    border-top-right-radius: 50%;
 
 }
 .heart-red{
@@ -133,5 +140,7 @@ export default {
     display: flex;
     bottom: 30px;;
 }
-
+.bottom-container{
+    padding: 0.5rem 0.2rem;
+}
 </style>
