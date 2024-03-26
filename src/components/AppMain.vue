@@ -156,9 +156,13 @@ export default {
     width: 100%;
     height: 100%;
     color: $light-color;;
+    font-size: 1.5rem;
     margin: auto;
-    background: rgba(0, 0, 0, 0.308);
+    background: rgba(0, 0, 0, 0.508);
     z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     > .close-modal{
         position: absolute;
         top: 0;
