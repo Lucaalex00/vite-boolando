@@ -143,4 +143,39 @@ export default {
 .bottom-container{
     padding: 0.5rem 0.2rem;
 }
+
+.modal-bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+.modal-container{
+    width: 100%;
+    height: 100%;
+    color: $light-color;;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.308);
+    z-index: 3;
+    > .close-modal{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: red;
+        text-shadow: 2px 3px rgba(255, 0, 0, 0.493);
+        font-size: 3rem;
+        background-color: transparent;
+        border: 0;
+        padding: 0.2rem;
+        &:hover{
+            background-color: rgba(128, 128, 128, 0.507);
+            cursor: pointer;
+
+        } 
+    }
+
+
+}
 </style>

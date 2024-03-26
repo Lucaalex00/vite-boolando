@@ -1,6 +1,6 @@
 <script>
 /* JS HERE */
-import GenderChoice from './AppGenderChoice.vue';
+import GenderChoice from './GenderChoice.vue';
 export default {
     name: 'AppHeader',
     components: {
@@ -14,11 +14,6 @@ export default {
     <header id="site-header">
         <div class="header-container">
             <div class="container">
-                <!-- <div class="gender-sel">
-                    <span> Donna </span>
-                    <span> Uomo </span>
-                    <span> Bambini </span>
-                </div> -->
                 <GenderChoice />
                 <div class="logo">
                     <img src="../assets/img/boolean-logo.png">

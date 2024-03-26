@@ -5,8 +5,9 @@ export default {
     props: {
         product: Object,
     },
-    selectedEl:false,
     discountedPrice: 0,
+    selectedEl: false,
+    isShowModal: false,
     methods: {
         calcDiscount(price, discount) {
             // Converte i valori in numeri e calcola lo sconto
@@ -17,20 +18,32 @@ export default {
         },
         AddFavorites() {
             this.selectedEl = !this.selectedEl;
-        }
+        },
+        showModal() {
+            this.isShowModal = true;
+        },
+        hideModal() {
+            this.isShowModal = false;   
+        },
     }
 }
 </script>
 
 <template>
+    <div class="modal-bg" v-if="isShowModal==true">
+        <div class="modal-container">
+            <div> CIAO  </div>
+            <button class="close-modal" @click="hideModal()"> &cross; </button>
+        </div>
+    </div>
     <div class="flex-top-bottom">
         <div class="top-container">
 
-            <div class="img first"> <!-- section-->
+            <div class="img first" @click="showModal()"> <!-- section-->
                 <img :src="'../src/assets/img/'+ product.frontImage">
                 <img class="hidden" :src="'../src/assets/img/'+ product.backImage">
                 <div class="hearts-container absolute">
-                    <span :style="{ color: this.selectedEl ? 'red' : 'black' }"@click="AddFavorites()">&hearts;</span>
+                    <span :style="{ color: this.selectedEl ? 'red' : 'black' }" @click="AddFavorites()">&hearts;</span>
                 </div>
                 <div class="badge-container absolute">
                     <div v-for="badge in product.badges" class="percent-sales-container">
