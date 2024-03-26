@@ -129,7 +129,6 @@ export default {
 .sale-price {
     color: black;
     font-weight: bold;
-    margin-right: 2px;
 }
 
 .original-price {
@@ -149,20 +148,31 @@ export default {
     height: 100%;
     position: fixed;
     z-index: 3;
+    background: rgba(0, 0, 0, 0.508);
     top: 0;
     left: 0;
 }
 .modal-container{
-    width: 100%;
-    height: 100%;
-    color: $light-color;;
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    color: $darkest-color;;
+    background-color: rgba(255, 255, 255, 0.795);
     font-size: 1.5rem;
     margin: auto;
-    background: rgba(0, 0, 0, 0.508);
-    z-index: 3;
+
+    border: 2px solid white;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
     > .close-modal{
         position: absolute;
         top: 0;
@@ -177,8 +187,76 @@ export default {
             background-color: rgba(128, 128, 128, 0.507);
             cursor: pointer;
 
-        } 
+        }
+    };
+    > .modal-img{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        > img{
+             border-radius: 50%;
+             border: 1px solid black;
+            width: 50%;
+            
+        }
+    };
+    >.favorites {
+         color: red;
+         text-shadow: 1px 1px black;
+         text-decoration: underline;
+         width: 50%;
+         text-align: center;
+         font-size: 1.8rem
+
+    };
+    > .modal-info{
+        display: flex;
+        flex-direction: column;   
+        gap: 0.5rem;
+        text-align: center;
+        font-size : 1.8rem;
+        font-weight: bold;
+        >.modal-guess{
+            color: rgba(255, 0, 0, 0.664);
+        };
+        >.modal-levis {
+            color: rgba(18, 151, 6, 0.664);
+        };
+        >.modal-esprit {
+            color: rgba(0, 102, 255, 0.664);
+        };
+        >.modal-name{
+            font-size: 1.2rem;
+        };
+        >.modal-prices{
+            gap: 0.5rem;
+            display: flex;
+            justify-content: center;
+            >.sale-price{
+            }
+        }
+        .modal-badges{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            gap: 1rem;
+            font-size: 1rem;
+            
+           > .modal-discount{
+                background-color: $discount-color;
+                padding: 0.5rem;
+                
+            }
+            >.modal-type {
+               background-color: $tag-color;
+               padding: 0.5rem;
+            }
+        }
     }
+
+
 
 
 }
