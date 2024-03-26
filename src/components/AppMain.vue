@@ -153,7 +153,7 @@ export default {
     left: 0;
 }
 .modal-container{
-    width: 80%;
+    width: 60%;
     height: 80%;
     padding: 1rem;
 
@@ -167,7 +167,7 @@ export default {
     font-size: 1.5rem;
     margin: auto;
 
-    border: 2px solid white;
+    border: 2px solid rgba(0, 0, 0, 0.815);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,7 +184,7 @@ export default {
         border: 0;
         padding: 0.2rem;
         &:hover{
-            background-color: rgba(128, 128, 128, 0.507);
+            background-color: rgba(128, 128, 128, 0.267);
             cursor: pointer;
 
         }
@@ -215,7 +215,7 @@ export default {
         flex-direction: column;   
         gap: 0.5rem;
         text-align: center;
-        font-size : 1.8rem;
+        font-size : 1.5rem;
         font-weight: bold;
         >.modal-guess{
             color: rgba(255, 0, 0, 0.664);
@@ -228,32 +228,15 @@ export default {
         };
         >.modal-name{
             font-size: 1.2rem;
+            color: $dark-color
         };
-        >.modal-prices{
-            gap: 0.5rem;
+        .modal-prices{
+            gap: 0.8rem;
             display: flex;
             justify-content: center;
-            >.sale-price{
-            }
-        }
-        .modal-badges{
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            right: 0;
-            gap: 1rem;
-            font-size: 1rem;
             
-           > .modal-discount{
-                background-color: $discount-color;
-                padding: 0.5rem;
-                
-            }
-            >.modal-type {
-               background-color: $tag-color;
-               padding: 0.5rem;
-            }
-        }
+        };
+      
     }
 
 

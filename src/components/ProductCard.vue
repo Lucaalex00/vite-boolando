@@ -10,7 +10,6 @@ export default {
             discountedPrice: 0,
             selectedEl: false,
             isShowModal: false,
-            
         }
     },
     methods: {
@@ -22,8 +21,13 @@ export default {
             return this.discountedPrice.toFixed(2); // Arrotonda il prezzo a due decimali
         },
         AddFavorites() {
-            this.selectedEl = !this.selectedEl;
-            alert('Hai aggiunto un articolo nei preferiti !' )
+            if (this.selectedEl == false) {
+                alert('Hai aggiunto un articolo nei preferiti !')
+                this.selectedEl = !this.selectedEl
+            }
+            else {
+                this.selectedEl = !this.selectedEl
+            }
         },
         showModal() {
             this.isShowModal = true;
@@ -64,14 +68,6 @@ export default {
                             calcDiscount(product.price,
                             badge.value) }}€
                         </span>
-
-                        <div class="modal-badges">
-                            <span class=" modal-discount" v-if="badge.type=='discount'">{{ badge.value }}
-                            </span>
-                            <span class="modal-type" v-else>
-                                {{ badge.value }}
-                            </span>
-                        </div>
                     </div>
                 </div>
             </div>
