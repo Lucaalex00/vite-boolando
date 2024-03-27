@@ -1,25 +1,36 @@
 <script>
 /* JS HERE */
 import ProductCard from "./ProductCard.vue";
-import ModalComponent from "./Modal.vue";
+import Modal from "./Modal.vue"
 
 import {state} from '../state.js'
 export default {
     name: 'AppMain',
     components: {
         ProductCard,
-        ModalComponent,
+        Modal,
     },
     data() {
         return {
             state, // (state:state / KEY: VALUE)
-            isShowModal: false,            
+            isShowModal: false,
+                       
         }
     },
     methods: {
         showModal() {
             this.isShowModal = true;
+            console.log(this.isShowModal)
         },   
+        setProductValue(n){
+            this.productEl = n
+            console.log(this.productEl)
+
+        },
+        hideModal() {
+            this.isShowModal = false;
+            console.log(this.isShowModal)
+        },
     },
     mounted() {
         this.state.getProducts(this.state.products_url)
@@ -32,8 +43,8 @@ export default {
     <!-- HTML HERE -->
     <main id="site-main">
         <div class="main-container container debug">
-            <ProductCard :product="product" v-for="product in state.products" @show-modal="showModal()"/>
-            <ModalComponent v-if="this.isShowModal"/>
+            <ProductCard :product="product" v-for="product in state.products" @show-modal="(n) => { setProductValue(n), showModal()}" />
+            <Modal :product="this.productEl" v-if="isShowModal && this.productEl != null" @hide-modal="hideModal()" />
         </div>
     </main>
     <!-- /#site-main -->
@@ -103,7 +114,9 @@ export default {
     padding: 5px 10px;
     border-radius: 5px;
     border-top-right-radius: 50%;
-
+    >span{
+        cursor: pointer;
+    }
 }
 
 .percent-sales-container {

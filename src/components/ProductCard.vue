@@ -1,42 +1,47 @@
 <script>
+import Modal from './Modal.vue';
+import { state } from '../state.js';
 export default {
     name: 'ProductCard',
     components: {
+        Modal
     },
     props: {
         product: Object,
     },
     data() {
         return {
-            discountedPrice: 0,
+            state,
+
+
         }
     },
     methods: {
-        calcDiscount(price, discount) {
-            // Converte i valori in numeri e calcola lo sconto
-            this.discountedPrice = price * (1 - parseInt(discount) / 100);
-
-            // Restituisci il prezzo scontato
-            return this.discountedPrice.toFixed(2); // Arrotonda il prezzo a due decimali
-        },
         showModal() {
-            this.$emit('show-modal');
-        }
-        
+            this.$emit('show-modal', this.product);
+        },
+         AddFavorites() {
+                if (this.product.isInFavorites == false) {
+                    alert('Hai aggiunto un articolo nei preferiti !')
+                }
+                this.product.isInFavorites = !this.product.isInFavorites
+                console.log(this.product.isInFavorites)
+                console.log(state.products)
+        },
     }
 }
 </script>
 
 <template>
-    <ModalComponent/>
+    
     <div class="flex-top-bottom">
         <div class="top-container">
 
             <div class="img first"> <!-- section-->
                 <img :src="'../src/assets/img/'+ product.frontImage">
-                <img class="hidden" @click="showModal()" :src="'../src/assets/img/'+ product.backImage">
+                <img class="hidden" @click="showModal" :src="'../src/assets/img/'+ product.backImage">
                 <div class="hearts-container absolute">
-                    <span :style="{ color: selectedEl ? 'red' : 'black' }" @click="AddFavorites()">&hearts;</span>
+                    <span :style="{ color: product.isInFavorites ? 'red' : 'black' }" @click="AddFavorites">&hearts;</span>
                 </div>
                 <div class="badge-container absolute">
                     <div v-for="badge in product.badges" class="percent-sales-container">
@@ -66,10 +71,9 @@ export default {
                 <div v-for="badge in product.badges">
 
                     <span v-if="badge.type == 'discount'" class=" original-price">{{
-                        calcDiscount(product.price,
+                        state.calcDiscount(product.price,
                         badge.value) }}€</span>
                 </div>
-
             </div>
         </div>
     </div>

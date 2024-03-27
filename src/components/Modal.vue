@@ -1,34 +1,31 @@
     <script>
+    import {state} from '../state.js'
     export default {
-        name: 'ModalComponent',
+        name: 'Modal',
+        props: {
+            product: Object,
+        },
         data() {
             return {
-                selectedEl: false,
-              
+                state,
+                discountedPrice: 0,
+
+
             }
-            
+
         },
         methods: {
-            AddFavorites() {
-                if (this.selectedEl == false) {
-                    alert('Hai aggiunto un articolo nei preferiti !')
-                    this.selectedEl = !this.selectedEl
-                }
-                else {
-                    this.selectedEl = !this.selectedEl
-                }
-            },
             hideModal() {
-                this.isShowModal = false;
+                this.$emit('hide-modal');
             },
-        }
+        },
     }
     </script>
 
 <template>
-    <div class="modal-bg" v-if="isShowModal == true">
+    <div class="modal-bg">
         <div class="modal-container">
-            <span class="favorites" v-if="selectedEl == true"> Favorite's Product &hearts;</span>
+            <span class="favorites" v-if="product.isInFavorites == true"> Favorite's Product &hearts;</span>
             <div class="modal-img">
                 <img :src="'../src/assets/img/' + product.frontImage">
                 <img :src="'../src/assets/img/' + product.backImage">
@@ -51,8 +48,8 @@
                     <div v-for="badge in product.badges">
 
                         <span v-if="badge.type == 'discount'" class=" original-price">{{
-        calcDiscount(product.price,
-            badge.value) }}€
+                            state.calcDiscount(product.price,
+                            badge.value) }}€
                         </span>
                     </div>
                 </div>
